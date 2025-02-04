@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri GIF </title>
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0f172a;
+            margin: 40px 0 20px;
+            font-size: 2.8em;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #475569;
+            margin-bottom: 50px;
+            font-size: 1.4em;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .gif-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px 0;
+        }
+
+        .gif-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #e2e8f0;
+        }
+
+        .gif-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-color: #cbd5e1;
+        }
+
+        .gif-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .gif-card:hover .gif-image {
+            transform: scale(1.02);
+        }
+
+        .link-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .gif-url {
+            flex: 1;
+            color: #64748b;
+            font-size: 0.85em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding: 6px 12px;
+            font-family: 'SF Mono', Menlo, monospace;
+        }
+
+        .copy-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.85em;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .copy-btn:hover {
+            background: #2563eb;
+            box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
+        }
+
+        .copy-btn:active {
+            transform: scale(0.96);
+        }
+
+        .copied-message {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15, 23, 42, 0.95);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-size: 0.95em;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(4px);
+            display: none;
+            animation: slideUp 0.3s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translate(-50%, 20px);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, 0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2.2em;
+            }
+            
+            .gif-container {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>🎨 Galeri GIF unandfess</h1>
+    <h2>Pilih dan salin tautan GIF favorit Anda untuk dibagikan</h2>
+
+    <div class="gif-container">
+        <!-- GIF 1 -->
+        <div class="gif-card">
+            <img src="https://res.cloudinary.com/depbfbxtm/image/upload/v1738678242/ohidlorq8mihjcndxpcl.gif" 
+                 alt="Animasi 1" 
+                 class="gif-image">
+            <div class="link-container">
+                <span class="gif-url">https://res.cloudinary.com/.../ohidlorq8mihjcndxpcl.gif</span>
+                <button class="copy-btn" 
+                        onclick="copyLink('https://res.cloudinary.com/depbfbxtm/image/upload/v1738678242/ohidlorq8mihjcndxpcl.gif')">
+                    📋 Salin
+                </button>
+            </div>
+        </div>
+
+        <!-- GIF 2 -->
+        <div class="gif-card">
+            <img src="https://res.cloudinary.com/depbfbxtm/image/upload/v1738690218/maeszpijfpoc52jxy2f4.webp" 
+                 alt="Animasi 2" 
+                 class="gif-image">
+            <div class="link-container">
+                <span class="gif-url">https://res.cloudinary.com/.../kqr74bs1x0fuuimqxltu.gif</span>
+                <button class="copy-btn" 
+                        onclick="copyLink('https://res.cloudinary.com/depbfbxtm/image/upload/v1738690217/kqr74bs1x0fuuimqxltu.gif')">
+                    📋 Salin
+                </button>
+            </div>
+        </div>
+
+        <!-- GIF 3 -->
+        <div class="gif-card">
+            <img src="https://res.cloudinary.com/depbfbxtm/image/upload/v1738690217/kqr74bs1x0fuuimqxltu.gif" 
+                 alt="Animasi 3" 
+                 class="gif-image">
+            <div class="link-container">
+                <span class="gif-url">https://res.cloudinary.com/.../kqr74bs1x0fuuimqxltu.gif</span>
+                <button class="copy-btn" 
+                        onclick="copyLink('https://res.cloudinary.com/depbfbxtm/image/upload/v1738690217/kqr74bs1x0fuuimqxltu.gif')">
+                    📋 Salin
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="copied-message" id="copiedMessage">Tautan berhasil disalin!</div>
+
+    <script>
+        function copyLink(url) {
+            navigator.clipboard.writeText(url)
+                .then(() => {
+                    const message = document.getElementById('copiedMessage');
+                    message.style.display = 'block';
+                    setTimeout(() => {
+                        message.style.display = 'none';
+                    }, 2000);
+                })
+                .catch(err => console.error('Gagal menyalin:', err));
+        }
+    </script>
+</body>
+                  </html>
